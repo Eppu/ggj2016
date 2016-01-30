@@ -1,18 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &125858
+--- !u!1 &127816
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 466822}
-  - 212: {fileID: 21245820}
-  - 114: {fileID: 11452018}
-  - 95: {fileID: 9553240}
-  - 60: {fileID: 6036994}
-  - 82: {fileID: 8297172}
+  - 4: {fileID: 483208}
+  - 212: {fileID: 21287750}
+  - 114: {fileID: 11450084}
+  - 95: {fileID: 9520732}
+  - 60: {fileID: 6077310}
+  - 82: {fileID: 8202436}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -20,24 +20,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &466822
+--- !u!4 &483208
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125858}
+  m_GameObject: {fileID: 127816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.0799999, y: 11.2700005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!60 &6036994
+--- !u!60 &6077310
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125858}
+  m_GameObject: {fileID: 127816}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -81,17 +81,17 @@ PolygonCollider2D:
       - {x: .349999994, y: -1.25}
       - {x: .430000007, y: -1.22000003}
       - {x: .529999971, y: -1.15999997}
---- !u!82 &8297172
+--- !u!82 &8202436
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125858}
-  m_Enabled: 0
+  m_GameObject: {fileID: 127816}
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b82dc711c1f9943d4b1b8a510232d9e4, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -151,13 +151,13 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!95 &9553240
+--- !u!95 &9520732
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125858}
+  m_GameObject: {fileID: 127816}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 46f520618f9744c65afa38bfdbd9ed6f, type: 2}
@@ -168,12 +168,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11452018
+--- !u!114 &11450084
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125858}
+  m_GameObject: {fileID: 127816}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ec18d6932a09443e9ff830ffd76aa8d, type: 3}
@@ -183,12 +183,20 @@ MonoBehaviour:
   moveSpeed: 3
   rotateSpeed: 3
   killCounter: {fileID: 0}
---- !u!212 &21245820
+  deathSound:
+  - {fileID: 8300000, guid: 04b8239c40e90439880921bab3096fdd, type: 3}
+  - {fileID: 8300000, guid: 059be830269e342cdbe24d940d3cae1a, type: 3}
+  - {fileID: 8300000, guid: 6e47f089426c8436ab7c649c9e83dccc, type: 3}
+  - {fileID: 8300000, guid: 1b4b71eb3b1124063809f2c6a7d16d51, type: 3}
+  enemyAudio: {fileID: 0}
+  spriteRend: {fileID: 0}
+  boxColl: {fileID: 0}
+--- !u!212 &21287750
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125858}
+  m_GameObject: {fileID: 127816}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -215,16 +223,8 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: b82dc711c1f9943d4b1b8a510232d9e4, type: 3}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 125858}
+  m_RootGameObject: {fileID: 127816}
   m_IsPrefabParent: 1
