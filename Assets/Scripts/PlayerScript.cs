@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour 
+public class PlayerScript : MonoBehaviour 
 {
 	public GameObject bulletPrefab;
 	public float bulletSpeed = 10.0f;

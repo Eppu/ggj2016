@@ -18,7 +18,14 @@ public class MoveBullet : MonoBehaviour
 
 	IEnumerator Die()
 	{
-		yield return new WaitForSeconds(3); //waits 3 seconds
+		yield return new WaitForSeconds(1); //waits 3 seconds
 		Destroy(gameObject); //this will work after 3 seconds.
+	}
+
+	void OnCollisionEnter2D (Collision2D col)
+	{
+		{
+			Destroy(gameObject);
+		}
 	}
 }
