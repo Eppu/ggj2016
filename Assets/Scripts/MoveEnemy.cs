@@ -15,7 +15,7 @@ public class MoveEnemy : MonoBehaviour {
 	void Update()
 	{
 		Quaternion rotation = Quaternion.LookRotation
-			(target.transform.position - transform.position, transform.TransformDirection(Vector3.back));
+			(target.transform.position - transform.position, transform.TransformDirection(Vector3.forward));
 		transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
 
 		transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
