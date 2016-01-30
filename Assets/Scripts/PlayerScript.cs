@@ -5,6 +5,7 @@ public class PlayerScript : MonoBehaviour
 {
 	public GameObject bulletPrefab;
 	public float bulletSpeed = 10.0f;
+	public static int enemiesKilled = 0;
 	// Use this for initialization
 
 	void Start () 

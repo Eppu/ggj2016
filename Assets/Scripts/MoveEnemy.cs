@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MoveEnemy : MonoBehaviour {
 
 	public Transform target;
 	public float moveSpeed = 3f;
 	public float rotateSpeed = 3f;
+	public Text killCounter;
 	
 	void Start()
 	{
 		target = GameObject.Find("Shrine").transform;
+		//killCounter = GetComponent<Text> ();
 	}
 
 	void Update()
@@ -29,6 +32,8 @@ public class MoveEnemy : MonoBehaviour {
 	{
 		if(col.gameObject.tag == "Bullet")
 		{
+			PlayerScript.enemiesKilled++;
+			Debug.Log(PlayerScript.enemiesKilled);
 			Destroy(gameObject);
 		}
 	}
