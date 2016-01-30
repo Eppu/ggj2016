@@ -7,11 +7,14 @@ public class PlayerScript : MonoBehaviour
 	public float bulletSpeed = 10.0f;
 	public static int enemiesKilled = 0;
 	public ParticleSystem muzzleFlash;
+
+	AudioSource gunshot;
 	// Use this for initialization
 
 	void Start () 
 	{
 		muzzleFlash.emissionRate = 0;
+		gunshot = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -21,6 +24,8 @@ public class PlayerScript : MonoBehaviour
 		{
 			Fire ();
 			muzzleFlash.Emit (30);
+			gunshot.Play();
+
 		}
 		else
 		{

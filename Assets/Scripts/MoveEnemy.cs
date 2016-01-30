@@ -8,6 +8,7 @@ public class MoveEnemy : MonoBehaviour {
 	public float moveSpeed = 3f;
 	public float rotateSpeed = 3f;
 	public Text killCounter;
+	public AudioClip[] deathSound;
 	
 	void Start()
 	{
