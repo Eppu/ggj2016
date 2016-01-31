@@ -6,15 +6,13 @@ public class PlayerMove : MonoBehaviour
 	public float rotationSpeed = 100.0f;
 	GameObject player;
 	Animator playerAnim;
-
-	// Use this for initialization
+	
 	void Start () 
 	{
-		player = GameObject.Find ("Player");
-		playerAnim = player.GetComponent<Animator> ();
+		//player = GameObject.Find ("Player");
+		//playerAnim = player.GetComponent<Animator> ();
 	}
-	
-	// Update is called once per frame
+
 	void Update () 
 	{
 		if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
@@ -27,12 +25,6 @@ public class PlayerMove : MonoBehaviour
 			RotateRight();
 
 		}
-		else
-		{
-			playerAnim.SetInteger("Direction", 0);
-		}
-
-
 	}
 
 	void RotateLeft ()

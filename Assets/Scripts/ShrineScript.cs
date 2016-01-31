@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ShrineScript : MonoBehaviour {
 
@@ -8,12 +9,15 @@ public class ShrineScript : MonoBehaviour {
 	public GameObject dieScreen;
 	public LogoScaler logoScaler;
 	public GameObject gameManager;
+	public GameObject player;
+	public EnemySpawner enemySpawner;
 
 	void Start () 
 	{
 		dieScreen = GameObject.Find ("DieScreen");
 		logoScaler = dieScreen.GetComponent<LogoScaler> ();
 		gameManager = GameObject.Find ("GameManager");
+		player = GameObject.Find ("PlayerPivot");
 	}
 	
 
@@ -21,17 +25,22 @@ public class ShrineScript : MonoBehaviour {
 	{
 		if (col.gameObject.tag == "Enemy") 
 		{
-			logoScaler.scaleUp();
-			gameManager.SetActive(false);
-
-			if(Input.GetKey(KeyCode.Return))
-			{
-				Application.LoadLevel(Application.loadedLevel);
-			}
-			
+			//logoScaler.scaleUp();
+			gameObject.GetComponent<LogoScaler>().enabled=true;
+			gameManager.GetComponent<EnemySpawner>().enabled=false;
+			player.GetComponent<PlayerMove>().enabled=false;		
 		}
 		
 	}
+
+	void Update()
+	{
+		if(Input.GetKey(KeyCode.Return))
+		{
+			Application.LoadLevel(Application.loadedLevel);
+		}
+	}
+
 
 
 }

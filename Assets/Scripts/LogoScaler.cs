@@ -14,7 +14,7 @@ public class LogoScaler : MonoBehaviour
 	
 	private bool resizing = true;
 
-	public void scaleUp ()
+	public void Update ()
 	{
 		if (resizing)
 		{

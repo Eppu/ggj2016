@@ -9,23 +9,20 @@ public class PlayerScript : MonoBehaviour
 	public ParticleSystem muzzleFlash;
 
 	AudioSource gunshot;
-	// Use this for initialization
 
 	void Start () 
 	{
 		muzzleFlash.emissionRate = 0;
 		gunshot = GetComponent<AudioSource> ();
 	}
-	
-	// Update is called once per frame
+
 	void Update () 
 	{
-		if(Input.GetKeyDown(KeyCode.UpArrow))
+		if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
 		{
 			Fire ();
 			muzzleFlash.Emit (30);
 			gunshot.Play();
-
 		}
 		else
 		{
