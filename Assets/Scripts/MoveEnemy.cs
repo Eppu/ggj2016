@@ -11,14 +11,16 @@ public class MoveEnemy : MonoBehaviour {
 	public AudioClip[] deathSound;
 	public AudioSource enemyAudio;
 	public SpriteRenderer spriteRend;
-	public BoxCollider2D boxColl;
+	public PolygonCollider2D polyColl;
+	public bool hasHitShrine = false;
 	
+
 	void Start()
 	{
 		target = GameObject.Find("Shrine").transform;
 		//killCounter = GetComponent<Text> ();
 		enemyAudio = GetComponent<AudioSource> ();
-		boxColl = GetComponent<BoxCollider2D> ();
+		polyColl = GetComponent<PolygonCollider2D> ();
 		spriteRend = GetComponent<SpriteRenderer> ();
 	}
 
@@ -37,26 +39,24 @@ public class MoveEnemy : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
-		if(col.gameObject.tag == "Bullet")
-		{
-			enemyAudio.PlayOneShot(deathSound[Random.Range(0,deathSound.Length)]);
+		if (col.gameObject.tag == "Bullet") {
+			enemyAudio.PlayOneShot (deathSound [Random.Range (0, deathSound.Length)]);
 			PlayerScript.enemiesKilled++;
-			Debug.Log(PlayerScript.enemiesKilled);
+			Debug.Log (PlayerScript.enemiesKilled);
 			spriteRend.enabled = false;
-			boxColl.enabled = false;
-			Die();
-
+			polyColl.enabled = false;
+			Destroy(gameObject, 1.0f);
 
 		}
+
 	}
 
-	IEnumerator Die()
+
+	IEnumerator KillEnemy()
 	{
 		yield return new WaitForSeconds(1); //waits 1 second
 		Destroy(gameObject); //this will work after 1 second.
 	}
-	
-
 }
 
 	
