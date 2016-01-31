@@ -28,7 +28,8 @@ public class ShrineScript : MonoBehaviour {
 			//logoScaler.scaleUp();
 			gameObject.GetComponent<LogoScaler>().enabled=true;
 			gameManager.GetComponent<EnemySpawner>().enabled=false;
-			player.GetComponent<PlayerMove>().enabled=false;		
+			player.GetComponent<PlayerMove>().enabled=false;	
+			gameManager.GetComponent<AudioSource>().volume=0.1f;
 		}
 		
 	}
@@ -38,6 +39,10 @@ public class ShrineScript : MonoBehaviour {
 		if(Input.GetKey(KeyCode.Return))
 		{
 			Application.LoadLevel(Application.loadedLevel);
+		}
+		if(Input.GetKey(KeyCode.Escape))
+		{
+			Application.Quit();
 		}
 	}
 

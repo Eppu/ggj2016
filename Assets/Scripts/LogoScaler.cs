@@ -13,9 +13,16 @@ public class LogoScaler : MonoBehaviour
 	public float shrinkSpeedTwo = -0.5f;
 	
 	private bool resizing = true;
+	public AudioSource mLady;
+
+	void Start()
+	{
+		mLady.Play ();
+	}
 
 	public void Update ()
 	{
+
 		if (resizing)
 		{
 			targetScale = minScale;
